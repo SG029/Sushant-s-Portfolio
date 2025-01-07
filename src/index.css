@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'InstrumentSerif-Italic';
+  src: url('./assets/fonts/InstrumentSerif-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'FoundersGrotesk-Regular';
+  src: url('./assets/fonts/FoundersGrotesk-Regular_0.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'FoundersGrotesk-Bold'; 
+  src: url('./assets/fonts/FoundersGrotesk-Bold.otf') format('opentype'); /* Assuming it's an OTF */
+  font-style: normal;
+  font-weight: bold; 
+}
+@keyframes fade-slide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide {
+  animation: fade-slide 0.5s ease-in-out;
+}
