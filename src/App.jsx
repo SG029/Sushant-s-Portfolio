@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Hero from './hero';
 import Navbar from './Navbar';
 import About from './About';
+import Projects from './Projects';
 import { motion } from 'framer-motion';
 
+
 function App() {
+
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [cursorSize, setCursorSize] = useState(25);
 
@@ -19,6 +22,7 @@ function App() {
 
   useEffect(() => {
     const handleMouseEnter = () => setCursorSize(100);
+    // const handleMouseEntera = () => setCursorSize(60);
     const handleMouseLeave = () => setCursorSize(25);
 
     const headings = document.querySelectorAll('h1');
@@ -26,12 +30,14 @@ function App() {
       heading.addEventListener('mouseenter', handleMouseEnter);
       heading.addEventListener('mouseleave', handleMouseLeave);
     });
+    
 
     return () => {
       headings.forEach((heading) => {
         heading.removeEventListener('mouseenter', handleMouseEnter);
         heading.removeEventListener('mouseleave', handleMouseLeave);
       });
+      
     };
   }, []);
 
@@ -59,6 +65,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Projects />
     </div>
   );
 }
