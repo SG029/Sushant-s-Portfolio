@@ -1,6 +1,6 @@
 import React from 'react';
 import bgImage from './assets/images/bg.png';
-import pfp from './assets/images/pfp.png';
+import pfp from './assets/images/pfp2.png';
 
 function Hero() {
   // Function to handle scroll

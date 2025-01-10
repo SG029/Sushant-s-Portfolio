@@ -8,13 +8,13 @@ import opencv from "./assets/images/opencv.png";
 import ochi from "./assets/images/ochi.png";
 function Projects() {
   return (
-    <div className="overflow-x-hidden text-white">
+    <div id='Projects' className="overflow-x-hidden text-white">
       <div className="w-screen min-h-[100vh] bg-[#0A0A0C] relative flex flex-col items-center justify-center">
         <div className="flex w-9/12 justify-between items-center ">
           <div className="heading">
-            <h1 className="text-8xl font-instrumentSerif italic font-normal tracking-tight leading-[5.5rem]">
+            <h1 className="text-8xl font-instrumentSerif italic font-normal leading-[5.5rem]">
               Check out my <br />
-              <span className="font-foundersGrotesk-bold not-italic font-extrabold text-8xl">
+              <span className="font-foundersGrotesk-bold not-italic tracking-tighter font-extrabold text-8xl">
                 PROJECTS
               </span>
             </h1>

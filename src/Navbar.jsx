@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 function Navbar() {
-  const [activePage, setActivePage] = useState('About');
+  const [activePage, setActivePage] = useState('About'); // Default to 'About'
   const [indicatorStyle, setIndicatorStyle] = useState({});
-  const navRefs = useRef([]);
-  const paddingX = 20; 
-  const paddingY = 2; 
+  const navRefs = useRef([]); // Store references to navigation items
+  const paddingX = 20; // Horizontal padding for the white indicator
+  const paddingY = 2;  // Vertical padding for the white indicator
+
   useEffect(() => {
     const sections = document.querySelectorAll('section');
 
@@ -14,20 +15,24 @@ function Navbar() {
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
+        // Update current based on scroll position
         if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
           current = section.getAttribute('id');
         }
       });
 
+      // Update the active page
       setActivePage(current);
     };
 
+    // Attach scroll event listener
     // window.addEventListener('scroll', handleScroll);
     // return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    const activeIndex = ['About', 'Projects', 'Experience', 'Contact', 'Resume'].indexOf(activePage);
+    // Find the active page index
+    const activeIndex = ['About', 'Projects', 'Experience', 'Contact'].indexOf(activePage);
     if (activeIndex !== -1 && navRefs.current[activeIndex]) {
       const { offsetLeft, offsetWidth, offsetHeight } = navRefs.current[activeIndex];
       setIndicatorStyle({
@@ -37,10 +42,10 @@ function Navbar() {
         height: offsetHeight + 2 * paddingY,
       });
     }
-  }, [activePage]);
+  }, [activePage]); // Runs whenever the activePage changes
 
   const handleClick = (page) => {
-    setActivePage(page);
+    setActivePage(page); // Update the active page manually
     const section = document.getElementById(page);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -59,11 +64,12 @@ function Navbar() {
           backgroundOrigin: 'border-box',
           backgroundImage: `linear-gradient(#111111, #111111), 
               linear-gradient(to bottom, white, black, black, white)`,
-          backdropFilter: 'blur(10px)', // Glassmorphism blur effect
-          WebkitBackdropFilter: 'blur(10px)', // For Safari support
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
         }}
       >
         <div className="flex items-center justify-center h-full gap-1 relative">
+          {/* White indicator div */}
           <div
             className="absolute bg-white rounded-full transition-all duration-500"
             style={{
@@ -71,6 +77,7 @@ function Navbar() {
             }}
           ></div>
 
+          {/* Navigation links */}
           {['About', 'Projects', 'Experience', 'Contact', 'Resume'].map((page, index) => (
             <div
               key={page}
@@ -82,7 +89,7 @@ function Navbar() {
                 className={`${
                   activePage === page
                     ? 'text-black font-instrumentSerif text-md'
-                    : 'text-white font-FoundersGrotesk-Regular font-light text-base hover:text-gray-400'
+                    : 'text-white font-light text-base hover:text-gray-400'
                 } transition ease-in duration-100`}
               >
                 {page}

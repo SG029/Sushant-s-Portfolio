@@ -10,7 +10,7 @@ function About() {
   
 
   return (
-    <div className="overflow-x-hidden">
+    <div id="About" className="overflow-x-hidden">
       <div className="w-screen min-h-screen bg-[#0A0A0C] text-white flex flex-col items-center justify-center relative">
         <div className="flex items-center justify-between w-9/12">
           <div className="heading-wrapper">

@@ -3,6 +3,8 @@ import Hero from './hero';
 import Navbar from './Navbar';
 import About from './About';
 import Projects from './Projects';
+import Experience from './Experience';
+import Footer from './Footer';
 import { motion } from 'framer-motion';
 
 
@@ -42,7 +44,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className='bg-[#0A0A0C]' >
       <motion.div
         className="fixed pointer-events-none rounded-full bg-white z-50"
         style={{
@@ -66,6 +68,8 @@ function App() {
       <Hero />
       <About />
       <Projects />
+      <Experience />
+      <Footer />
     </div>
   );
 }
