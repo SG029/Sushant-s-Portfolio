@@ -17,7 +17,6 @@ function Expdivs({ heading, description, number }) {
   const reset = () => {
     setPosition({ x: 0, y: 0 });
   };
-
   const { x, y } = position;
 
   return (
