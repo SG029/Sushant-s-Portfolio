@@ -13,7 +13,7 @@ function Expdivs({ heading, description, number }) {
     // Reduced effect strength for smoother movement
     setPosition({ x: middleX * 0.1, y: middleY * 0.1 }); 
   }; 
-
+ 
   const reset = () => {
     setPosition({ x: 0, y: 0 });
   };
