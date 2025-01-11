@@ -5,7 +5,7 @@ import arrow from "./assets/images/tilted-arrow.png";
 function Projectbar({ image, heading, description, githubLink, number }) {
   return (
     <div className="flex items-center justify-between text-white p-6 border-b-2 border-white pt-10 
-                 transition-colors duration-300 ease-in-out hover:bg-white hover:text-black group hover:rounded-lg">
+                 transition-colors duration-300 ease-in-out hover:bg-white hover:text-black group ">
       <div className="leftside font-FoundersGrotesk-Regular w-[30rem]">
         <div className="h-[4rem] overflow-hidden">
           <div className="group-hover:translate-y-[-50%] transition-all duration-300 ease-out">

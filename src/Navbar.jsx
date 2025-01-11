@@ -53,7 +53,7 @@ function Navbar() {
   };
 
   return (
-    <div className="fixed top-8 left-0 w-full z-50">
+    <div className="fixed top-8 left-0 w-full z-40">
       <div
         className="w-5/12 py-3 mx-auto backdrop-blur-md rounded-full relative overflow-hidden"
         style={{
