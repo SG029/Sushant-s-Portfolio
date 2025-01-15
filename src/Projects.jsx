@@ -79,14 +79,14 @@ function Projects() {
             image={opencv}
             heading="MOTION MAN"
             description="A fun game built with Python and OpenCV, inspired by Chrome Dino, where a character is controlled by hand gestures for an interactive challenge."
-            githubLink="https://github.com/SG029/"
+            githubLink="https://github.com/SG029/Motion-Man"
             number="04"
           />
           <Projectbar
             image={ochi}
             heading="OCHI REPLICA"
             description="This is a replica of a website with a modern web design, offering an attractive and visually appealing user experience."
-            githubLink="https://github.com/SG029/"
+            githubLink="https://github.com/SG029/ochi_web"
             number="05"
           />
         </div>
