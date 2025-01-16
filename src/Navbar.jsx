@@ -1,38 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function Navbar() {
-  const [activePage, setActivePage] = useState('About'); // Default to 'About'
   const [indicatorStyle, setIndicatorStyle] = useState({});
   const navRefs = useRef([]); // Store references to navigation items
+  const [hoveredPage, setHoveredPage] = useState(''); // Track hovered page
   const paddingX = 20; // Horizontal padding for the white indicator
-  const paddingY = 2;  // Vertical padding for the white indicator
+  const paddingY = 2; // Vertical padding for the white indicator
 
   useEffect(() => {
-    const sections = document.querySelectorAll('section');
+    const page = hoveredPage; // Use hoveredPage directly
+    const activeIndex = ['About', 'Projects', 'Experience', 'Contact', 'Resume'].indexOf(page);
 
-    const handleScroll = () => {
-      let current = '';
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        // Update current based on scroll position
-        if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      // Update the active page
-      setActivePage(current);
-    };
-
-    // Attach scroll event listener
-    // window.addEventListener('scroll', handleScroll);
-    // return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    // Find the active page index
-    const activeIndex = ['About', 'Projects', 'Experience', 'Contact'].indexOf(activePage);
     if (activeIndex !== -1 && navRefs.current[activeIndex]) {
       const { offsetLeft, offsetWidth, offsetHeight } = navRefs.current[activeIndex];
       setIndicatorStyle({
@@ -40,12 +19,28 @@ function Navbar() {
         width: offsetWidth + 2 * paddingX,
         top: `calc(50% - ${(offsetHeight + 2 * paddingY) / 2}px)`,
         height: offsetHeight + 2 * paddingY,
+        opacity: 1, // Ensure it's visible during hover
+      });
+    } else {
+      // Reset the indicator style when no page is hovered
+      setIndicatorStyle({
+        opacity: 0, // Fade out
       });
     }
-  }, [activePage]); // Runs whenever the activePage changes
+  }, [hoveredPage]); // Runs whenever hoveredPage changes
 
   const handleClick = (page) => {
-    setActivePage(page); // Update the active page manually
+    if (page === 'Resume') {
+      // Open the resume URL in a new tab
+      window.open(
+        'https://docs.google.com/document/d/163KJuMx16JnW3m1wn5aBG53-lklK7btE/edit?usp=sharing&ouid=109458991970907611938&rtpof=true&sd=true',
+        '_blank'
+      );
+      return;
+    }
+
+    // Scroll to the corresponding section for other pages
+    setHoveredPage(page);
     const section = document.getElementById(page);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -69,13 +64,29 @@ function Navbar() {
         }}
       >
         <div className="flex items-center justify-center h-full gap-1 relative">
-          {/* White indicator div */}
-          <div
-            className="absolute bg-white rounded-full transition-all duration-500"
-            style={{
-              ...indicatorStyle,
-            }}
-          ></div>
+          {/* White indicator div with framer-motion */}
+          <AnimatePresence>
+            {hoveredPage && (
+              <motion.div
+                className="absolute bg-white rounded-full"
+                style={{
+                  ...indicatorStyle,
+                  position: 'absolute',
+                }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  left: indicatorStyle.left,
+                  width: indicatorStyle.width,
+                  top: indicatorStyle.top,
+                  height: indicatorStyle.height,
+                }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
+              />
+            )}
+          </AnimatePresence>
 
           {/* Navigation links */}
           {['About', 'Projects', 'Experience', 'Contact', 'Resume'].map((page, index) => (
@@ -84,13 +95,15 @@ function Navbar() {
               ref={(el) => (navRefs.current[index] = el)}
               className="relative mx-5 cursor-pointer"
               onClick={() => handleClick(page)}
+              onMouseEnter={() => setHoveredPage(page)} // Set hovered page on hover
+              onMouseLeave={() => setHoveredPage('')} // Reset hovered page when mouse leaves
             >
               <span
                 className={`${
-                  activePage === page
-                    ? 'text-black font-instrumentSerif text-md'
+                  hoveredPage === page
+                    ? 'text-black font-semibold text-md font-instrumentSerif'
                     : 'text-white font-light text-base hover:text-gray-400'
-                } transition ease-in duration-100`}
+                } transition ease-in duration-300`}
               >
                 {page}
               </span>

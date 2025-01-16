@@ -1,0 +1,16 @@
+/* Loading Screen */
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling during loading */
+  }
+  
+  .loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0a0a0c;
+    color: white;
+    font-family: 'Instrument Serif', serif;
+  }
+  

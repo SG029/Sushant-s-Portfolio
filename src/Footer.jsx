@@ -28,9 +28,17 @@ function Footer() {
   };
 
   const handleClick = (page) => {
-    const section = document.getElementById(page);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (page === "Resume") {
+      // Open the resume link in a new tab
+      window.open(
+        "https://docs.google.com/document/d/163KJuMx16JnW3m1wn5aBG53-lklK7btE/edit?usp=sharing&ouid=109458991970907611938&rtpof=true&sd=true",
+        "_blank"
+      );
+    } else {
+      const section = document.getElementById(page);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
@@ -85,16 +93,40 @@ function Footer() {
               )}
             </div>
             <div className="socials flex flex-col gap-2">
-              <Footersocials text="LinkedIn" icon={FaLinkedinIn} onClick={() => window.open("https://www.linkedin.com/in/sushant-gola/", "_blank")}/>
-              <Footersocials text="Instagram" icon={FaInstagram} onClick={() => window.open("https://www.instagram.com/sushant_since2004/", "_blank")}/>
-              <Footersocials text="GitHub" icon={FaGithub} onClick={() => window.open("https://github.com/SG029", "_blank")}/>
+              <Footersocials
+                text="LinkedIn"
+                icon={FaLinkedinIn}
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/sushant-gola/",
+                    "_blank"
+                  )
+                }
+              />
+              <Footersocials
+                text="Instagram"
+                icon={FaInstagram}
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/sushant_since2004/",
+                    "_blank"
+                  )
+                }
+              />
+              <Footersocials
+                text="GitHub"
+                icon={FaGithub}
+                onClick={() =>
+                  window.open("https://github.com/SG029", "_blank")
+                }
+              />
             </div>
           </div>
         </div>
         <h2 className="text-xl mb-5 font-FoundersGrotesk-Regular font-light text-[#8f8f8f]">
           Copyright © 2024 | Designed and developed by{" "}
           <a
-            className="text-white font-instrumentSerif italic cursor-pointer hover:underline  hover:text-[#8f8f8f]"   
+            className="text-white font-instrumentSerif italic cursor-pointer hover:underline  hover:text-[#8f8f8f]"
             href="https://github.com/SG029"
             target="_blank"
             rel="noopener noreferrer"

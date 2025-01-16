@@ -6,6 +6,7 @@ import ab from "./assets/images/ab.png";
 import pong from "./assets/images/pong.png";
 import opencv from "./assets/images/opencv.png";
 import ochi from "./assets/images/ochi.png";
+import wit from "./assets/images/wit.png";
 function Projects() {
   return (
     <div id='Projects' className="overflow-x-hidden text-white">
@@ -88,6 +89,13 @@ function Projects() {
             description="This is a replica of a website with a modern web design, offering an attractive and visually appealing user experience."
             githubLink="https://github.com/SG029/ochi_web"
             number="05"
+          />
+          <Projectbar
+            image={wit}
+            heading="Women in Tech"
+            description="Interactive Women in Tech IIITD website built with React, Tailwind CSS, and seamless React Router navigation."
+            githubLink="https://github.com/SG029/WIT-web"
+            number="06"
           />
         </div>
       </div>
