@@ -1,0 +1,103 @@
+
+/* Small phones (320px - 480px) */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+
+  .bg-section {
+    background-size: 200%; /* Scale to fit smaller screens */
+    background-position: top center; /* Align image at the top */
+  }
+
+  .txt {
+    font-size: 15vw;
+  }
+  .container{
+    gap:6vh;
+  }
+  .txt-container{
+    align-items: center;
+  }
+  .txt-container :nth-child(2){
+    margin-top: 0vw;
+  }
+  .pfpp {
+    width: 70vw;
+  }
+
+  .scrollclick {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .scrollclick svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+/* Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 80%;
+    gap: 2rem;
+  }
+
+  .txt {
+    font-size: 14vw;
+  }
+  .txt-container{
+    align-items: center;
+  }
+
+  .pfpp {
+    width: 50vw;
+  }
+  .container{
+    gap: 6vh;
+  }
+
+  .scrollclick {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .scrollclick svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Laptops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    width: 70%;
+    gap:6vh;
+  }
+
+  .txt {
+    font-size: 14vw;
+  }
+  .txt-container{
+    align-items: center;
+  }
+
+  .pfpp {
+    width:50vw;
+  }
+
+  .scrollclick {
+    height: 5rem;
+    width: 5rem;
+  }
+
+  .scrollclick svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

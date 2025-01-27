@@ -7,6 +7,7 @@ import Experience from './Experience';
 import Footer from './Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import icon from './assets/images/loading.png';
+import './App.css'
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -66,9 +67,31 @@ function App() {
 
   return (
     <div className="bg-[#0A0A0C]">
+      <style>
+        {`
+          /* Custom scrollbar styling */
+          ::-webkit-scrollbar {
+            width: 10px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background: #0A0A0C; /* Black track */
+          }
+
+          ::-webkit-scrollbar-thumb {
+            background: white; /* White thumb */
+            border-radius: 6px;
+          }
+
+          ::-webkit-scrollbar-thumb:hover {
+            background: #d1d1d1; /* Slightly lighter on hover */
+          }
+        `}
+      </style>
+
       {/* Custom cursor */}
       <motion.div
-        className="fixed pointer-events-none rounded-full bg-white z-50"
+        className="cursor fixed pointer-events-none rounded-full bg-white z-50"
         style={{
           mixBlendMode: 'difference',
         }}

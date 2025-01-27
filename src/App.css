@@ -1,16 +1,16 @@
-/* Loading Screen */
-body {
-    margin: 0;
-    overflow: hidden; /* Prevent scrolling during loading */
+
+  @media (max-width: 480px){
+    .cursor{
+      display: none;
+    }
   }
-  
-  .loading-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #0a0a0c;
-    color: white;
-    font-family: 'Instrument Serif', serif;
+  @media (min-width: 481px) and (max-width: 768px){
+    .cursor{
+      display: none;
+    }
   }
-  
+  @media (min-width: 769px) and (max-width: 1024px){
+    .cursor{
+      display: none;
+    }
+  }

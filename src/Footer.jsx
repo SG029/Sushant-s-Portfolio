@@ -124,7 +124,7 @@ function Footer() {
           </div>
         </div>
         <h2 className="text-xl mb-5 font-FoundersGrotesk-Regular font-light text-[#8f8f8f]">
-          Copyright © 2024 | Designed and developed by{" "}
+          Copyright © 2025 | Designed and developed by{" "}
           <a
             className="text-white font-instrumentSerif italic cursor-pointer hover:underline  hover:text-[#8f8f8f]"
             href="https://github.com/SG029"
