@@ -7,21 +7,22 @@ import pong from "./assets/images/pong.png";
 import opencv from "./assets/images/opencv.png";
 import ochi from "./assets/images/ochi.png";
 import wit from "./assets/images/wit.png";
+import './Projects.css'
 function Projects() {
   return (
     <div id='Projects' className="overflow-x-hidden text-white">
       <div className="w-screen min-h-[100vh] bg-[#0A0A0C] relative flex flex-col items-center justify-center">
-        <div className="flex w-9/12 justify-between items-center ">
-          <div className="heading">
-            <h1 className="text-8xl font-instrumentSerif italic font-normal leading-[5.5rem]">
+        <div className="project-top flex w-9/12 justify-between items-center ">
+          <div className="project-heading ">
+            <h1 className="project-head text-8xl font-instrumentSerif italic font-normal leading-[5.5rem]">
               Check out my <br />
-              <span className="font-foundersGrotesk-bold not-italic tracking-tighter font-extrabold text-8xl">
+              <span className="project-head font-foundersGrotesk-bold not-italic tracking-tighter font-extrabold text-8xl">
                 PROJECTS
               </span>
             </h1>
           </div>
-          <div className="sidetext w-[30rem] ">
-            <p className="font-FoundersGrotesk-Regular font-light text-xl">
+          <div className="project-sidetext w-[30rem] ">
+            <p className="project-top-r font-FoundersGrotesk-Regular font-light text-xl">
               These are some of my amazing projects. To explore more of my work,
               feel free to follow the GitHub link, connect for collaboration
               opportunities, and discover innovative ideas, creative designs,
