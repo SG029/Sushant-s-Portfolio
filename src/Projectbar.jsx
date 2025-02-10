@@ -33,7 +33,7 @@ function Projectbar({ image, heading, description, githubLink, number }) {
         className="rightside hover:cursor-pointer h-7 overflow-hidden"
         onClick={() => window.open(githubLink, "_blank")}
       >
-        <div className="hover:translate-y-[-50%] transition-all duration-300 ease-out">
+        <div className="read-cont hover:translate-y-[-50%] transition-all duration-300 ease-out">
           <div className="read-probar-more font-FoundersGrotesk-Regular text-[1.1rem] font-light flex items-center justify-center group relative overflow-hidden group-hover:text-black">
             Read more
             <img
