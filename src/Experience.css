@@ -1,0 +1,59 @@
+@media (max-width: 480px) {
+    .main-exp {
+        width: 95%;
+    }
+
+    .exp-top {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        text-align: start;
+        /* line-height: 10vw; */
+    }
+
+    .take-a,
+    .experience-h1 {
+        font-size: 20vw;
+        font-weight: 800;
+    }
+
+    .expdivsss .experience-card {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/*   
+  @media (min-width: 481px) and (max-width: 768px) {
+    .main-exp {
+      width: 90%;
+    }
+  
+    h1 {
+      font-size: 4rem;
+      line-height: 3.8rem;
+    }
+  
+    .expdivsss .experience-card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1080px) {
+    .main-exp {
+      width: 80%;
+    }
+  
+    h1 {
+      font-size: 5rem;
+      line-height: 4.5rem;
+    }
+  
+    .expdivsss .experience-card {
+      width: 48%;
+      margin: 15px;
+    }
+  } */

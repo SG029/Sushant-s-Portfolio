@@ -1,25 +1,26 @@
 import React from "react";
 import Expdivs from "./Expdivs";
+import "./Experience.css";
 
 function Experience() {
   return (
     <div id="Experience" className="overflow-x-hidden">
-      <div className="w-screen min-h-[100vh] bg-[#0A0A0C] text-white flex flex-col items-center justify-center relative">
-        <div className="w-9/12 ">
-          <div className="flex heading items-center justify-between">
+      <div className=" w-screen min-h-[100vh] bg-[#0A0A0C] text-white flex flex-col items-center justify-center relative">
+        <div className="main-exp w-9/12 ">
+          <div className="exptop flex heading items-center justify-between">
             <h1 className="text-8xl font-instrumentSerif italic font-normal leading-[5.5rem]">
-              <span className="font-foundersGrotesk-bold not-italic font-extrabold tracking-tighter text-8xl">
+              <span className="take-a font-foundersGrotesk-bold not-italic font-extrabold tracking-tighter text-8xl">
                 TAKE A{" "}
               </span>
               look at my
               <br />
               Work{" "}
-              <span className="font-foundersGrotesk-bold not-italic font-extrabold tracking-tighter text-8xl">
+              <span className="experience-h1 font-foundersGrotesk-bold not-italic font-extrabold tracking-tighter text-8xl">
                 EXPERIENCE
               </span>
             </h1>
           </div>
-          <div className="w-full h-auto mt-5 mb-20 flex flex-wrap justify-center"> 
+          <div className="expdivsss w-full h-auto mt-5 mb-20 flex flex-wrap justify-center"> 
             <Expdivs
               heading={"Web Developer"}
               description={
