@@ -1,6 +1,7 @@
 import React from "react";
 import arrow from "./assets/images/tilted-arrow.png";
 import "./About.css";
+import { section } from "framer-motion/client";
 
 function About() {
   const scrollToNextSection = () => {
@@ -10,6 +11,7 @@ function About() {
   };
 
   return (
+    <section id="About">
     <div id="About" className="overflow-x-hidden">
       <div className="w-screen min-h-screen bg-[#0A0A0C] text-white flex flex-col items-center justify-center relative">
         <div className="toppp flex items-center justify-between gap-[10vw] w-9/12 ">
@@ -113,6 +115,7 @@ function About() {
         </div>
       </div>
     </div>
+    </section>
   );
 }
 
