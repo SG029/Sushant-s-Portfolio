@@ -1,0 +1,322 @@
+/* Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .toppp {
+      flex-direction: column;
+      gap: 10vw; /* Add spacing between elements */
+    }
+  
+    .txta {
+      font-size: 12vw;
+      line-height: 2.5rem;
+    }
+    .txtt {
+      font-size: 15vw;
+    }
+  
+    .side-heading{
+        align-items: center;
+        justify-content: center;
+        gap:0vw
+    }
+
+    .side-heading p {
+      font-size: 5vw; /* Reduce font size for smaller screens */
+      /* line-height: 1.25rem; */
+      text-align:center;
+    }
+
+    .side-heading button{
+        width: auto;
+    }
+
+    .bottommm {
+      flex-direction: column;
+      gap: 4vw;
+      margin-top: 6vw;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .sideb {
+        display: none;
+    }
+  
+    .abb {
+        margin-top: 10vw;
+        margin-left: 0; /* Remove left margin */
+        margin-right: 0; /* Optional: Remove right margin */
+        padding-left: 0; /* Remove left padding */
+        padding-right: 0; /* Optional: Remove right padding */
+        /* width: 70%; Ensure it spans the full width of its container */
+        box-sizing: border-box; /* Include padding and border in width calculation */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: start;
+    }
+
+    .education,
+    .tech,
+    .hobbies {    
+        width: 80vw;
+        min-height: 40vw; /* Reduce min height */
+        padding: 1rem; /* Adjust padding */
+        max-height: unset; /* Remove hover max-height behavior */
+        background-color: inherit; /* Ensure the background color doesn't change */
+        color: inherit; /* Ensure text color doesn't change */
+        border-radius: 0; /* Remove rounded corners */
+        transition: none; /* Disable hover transition effects */
+        
+    }
+
+    .education p,
+    .tech p,
+    .hobbies p {
+        color: white;
+        margin-top: 2vw;
+        font-size: 5vw;
+        font-weight: lighter;
+    }
+
+    .education h2,
+    .tech h2,
+    .hobbies h2 {
+        font-size: 10vw;
+    }
+
+    .education:hover,
+    .tech:hover,
+    .hobbies:hover {
+        max-height: unset;
+        background-color: inherit;
+        color: inherit;
+        border-radius: 0;
+        padding: 1rem; /* Keep padding consistent */
+        transition: none;
+    }
+  }
+  
+  /* Tablets (481px - 768px) */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .toppp {
+        flex-direction: column;
+        gap: 10vw; 
+      }
+    
+      .txta {
+        font-size: 13vw;
+        line-height: 7vw;
+      }
+      .txtt {
+        font-size: 15vw;
+      }
+    
+      .side-heading{
+          align-items: center;
+          justify-content: center;
+          gap:0vw
+      }
+  
+      .side-heading p {
+        font-size: 4vw; /* Reduce font size for smaller screens */
+        line-height: 5vw;
+        text-align:center;
+      }
+  
+      .side-heading button{
+          width: auto;
+          scale: 1.5;
+          margin-top: 5vw;
+      }
+  
+      .bottommm {
+        flex-direction: column;
+        /* gap: 10vw; */
+        margin-top: 10vw;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .sideb {
+          display: none;
+      }
+    
+      .abb {
+          margin-top: 5vw;
+          margin-left: 0; /* Remove left margin */
+          margin-right: 0; /* Optional: Remove right margin */
+          padding-left: 0; /* Remove left padding */
+          padding-right: 0; /* Optional: Remove right padding */
+          /* width: 70%; Ensure it spans the full width of its container */
+          box-sizing: border-box; /* Include padding and border in width calculation */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-self: start;
+          gap:2vw
+      }
+  
+      .education,
+      .tech,
+      .hobbies {    
+          width:85vw;
+          min-height: 40vw; /* Reduce min height */
+          padding: 2rem; /* Adjust padding */
+          max-height: unset; /* Remove hover max-height behavior */
+          background-color: inherit; /* Ensure the background color doesn't change */
+          color: inherit; /* Ensure text color doesn't change */
+          border-radius: 0; /* Remove rounded corners */
+          transition: none; /* Disable hover transition effects */
+          
+      }
+  
+      .education p,
+      .tech p,
+      .hobbies p {
+        margin-top: 2vw;
+          color: white;
+          font-size: 4vw;
+          font-weight: 100;
+      }
+  
+      .education h2,
+      .tech h2,
+      .hobbies h2 {
+          font-size: 8vw;
+      }
+  
+      .education:hover,
+      .tech:hover,
+      .hobbies:hover {
+          max-height: unset;
+          background-color: inherit;
+          color: inherit;
+          border-radius:none ;
+          transition: none;
+      }
+  }
+  
+  /* Laptops (769px - 1024px) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .toppp {
+        flex-direction: column;
+        gap: 10vw; 
+      }
+    
+      .txta {
+        font-size: 13vw;
+        line-height: 7vw;
+      }
+      .txtt {
+        font-size: 15vw;
+      }
+    
+      .side-heading{
+          align-items: center;
+          justify-content: center;
+          gap:0vw
+      }
+  
+      .side-heading p {
+        font-size: 3.5vw; /* Reduce font size for smaller screens */
+        line-height: 5vw;
+        text-align:center;
+      }
+  
+      .side-heading button{
+          width: auto;
+          scale: 2;
+          margin-top: 5vw;
+      }
+  
+      .bottommm {
+        flex-direction: column;
+        /* gap: 10vw; */
+        margin-top: 10vw;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .sideb {
+          display: none;
+      }
+    
+      .abb {
+          margin-top: 5vw;
+          margin-left: 0; /* Remove left margin */
+          margin-right: 0; /* Optional: Remove right margin */
+          padding-left: 0; /* Remove left padding */
+          padding-right: 0; /* Optional: Remove right padding */
+              box-sizing: border-box; /* Include padding and border in width calculation */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-self: start;
+          gap:2vw
+      }
+  
+      .education,
+      .tech,
+      .hobbies {    
+          width:85vw;
+          min-height: 40vw; /* Reduce min height */
+          padding: 2rem; /* Adjust padding */
+          max-height: 100vw; /* Remove hover max-height behavior */
+          background-color: inherit; /* Ensure the background color doesn't change */
+          color: inherit; /* Ensure text color doesn't change */
+          border-radius: 0; /* Remove rounded corners */
+          transition: none; /* Disable hover transition effects */
+          
+      }
+  
+      .education p,
+      .tech p,
+      .hobbies p {
+        margin-top: 2vw;
+          color: white;
+          font-size: 3.5vw;
+          font-weight: 100;
+      }
+  
+      .education h2,
+      .tech h2,
+      .hobbies h2 {
+          font-size: 8vw;
+          margin-top: 1vw;
+      }
+  
+      .education:hover,
+      .tech:hover,
+      .hobbies:hover {
+          max-height: unset;
+          background-color: inherit;
+          color: inherit;
+          border-radius:none ;
+          transition: none;
+          /* scale:1; */
+      }
+  }
+  
+  /* Large screens (1025px and above) */
+  /* @media (min-width: 1025px) {
+    .heading-wrapper h1 {
+      font-size: 5rem;
+      line-height: 5.5rem;
+    }
+  
+    .side-heading p {
+      font-size: 1.25rem;
+      line-height: 2rem;
+    }
+  
+    .bottommm p {
+      font-size: 1.25rem;
+      line-height: 2rem;
+    }
+  
+    .education,
+    .tech,
+    .hobbies {
+      max-height: 20rem; 
+    }
+  } */

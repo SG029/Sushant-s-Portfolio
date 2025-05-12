@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import Hero from './hero';
+import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
 import Projects from './Projects';
 import Experience from './Experience';
 import Footer from './Footer';
-import { motion } from 'framer-motion';
-
+import { motion, AnimatePresence } from 'framer-motion';
+import icon from './assets/images/loading.png';
+import './App.css'
 
 function App() {
-
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [cursorSize, setCursorSize] = useState(25);
+  const [cursorSize, setCursorSize] = useState(25); // Initial cursor size
+  const [loading, setLoading] = useState(true); // Loading state
+  const [progress, setProgress] = useState(0); // Progress state for the loading bar
 
   useEffect(() => {
+    // Track mouse position
     const handleMouseMove = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
     };
@@ -23,30 +26,72 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const handleMouseEnter = () => setCursorSize(100);
-    // const handleMouseEntera = () => setCursorSize(60);
-    const handleMouseLeave = () => setCursorSize(25);
+    // Reattach event listeners after loading is complete
+    if (!loading) {
+      const handleMouseEnter = () => setCursorSize(100);
+      const handleMouseLeave = () => setCursorSize(25);
 
-    const headings = document.querySelectorAll('h1');
-    headings.forEach((heading) => {
-      heading.addEventListener('mouseenter', handleMouseEnter);
-      heading.addEventListener('mouseleave', handleMouseLeave);
-    });
-    
-
-    return () => {
+      const headings = document.querySelectorAll('h1');
       headings.forEach((heading) => {
-        heading.removeEventListener('mouseenter', handleMouseEnter);
-        heading.removeEventListener('mouseleave', handleMouseLeave);
+        heading.addEventListener('mouseenter', handleMouseEnter);
+        heading.addEventListener('mouseleave', handleMouseLeave);
       });
-      
-    };
-  }, []);
+
+      // Cleanup event listeners
+      return () => {
+        headings.forEach((heading) => {
+          heading.removeEventListener('mouseenter', handleMouseEnter);
+          heading.removeEventListener('mouseleave', handleMouseLeave);
+        });
+      };
+    }
+  }, [loading]); // Dependency ensures this runs after loading changes to false
+
+  // Simulate loading delay with progress bar
+  useEffect(() => {
+    let progressInterval;
+
+    if (loading) {
+      progressInterval = setInterval(() => {
+        setProgress((prev) => {
+          if (prev < 100) return prev + 1; // Increment progress
+          clearInterval(progressInterval); // Stop the interval when complete
+          setLoading(false); // Hide loading screen
+          return 100;
+        });
+      }, 30); // Adjust speed of loading bar (30ms per step)
+    }
+
+    return () => clearInterval(progressInterval);
+  }, [loading]);
 
   return (
-    <div className='bg-[#0A0A0C]' >
+    <div className="bg-[#0A0A0C]">
+      <style>
+        {`
+          /* Custom scrollbar styling */
+          ::-webkit-scrollbar {
+            width: 10px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background: #0A0A0C; /* Black track */
+          }
+
+          ::-webkit-scrollbar-thumb {
+            background: white; /* White thumb */
+            border-radius: 6px;
+          }
+
+          ::-webkit-scrollbar-thumb:hover {
+            background: #d1d1d1; /* Slightly lighter on hover */
+          }
+        `}
+      </style>
+
+      {/* Custom cursor */}
       <motion.div
-        className="fixed pointer-events-none rounded-full bg-white z-50"
+        className="cursor fixed pointer-events-none rounded-full bg-white z-50"
         style={{
           mixBlendMode: 'difference',
         }}
@@ -64,12 +109,50 @@ function App() {
           velocity: 0.5,
         }}
       ></motion.div>
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Footer />
+
+      {/* Loading Screen */}
+      <AnimatePresence>
+        {loading && (
+          <motion.div
+            className="fixed top-0 left-0 w-full h-full bg-[#0A0A0C] flex flex-col items-center justify-center z-50"
+            initial={{ y: 0 }}
+            animate={{ y: 0 }}
+            exit={{ y: '-100%' }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
+          >
+            <motion.img
+              src={icon} // Replace with the path to your loading image
+              alt="Loading"
+              className="w-32 h-32 mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+            />
+            <div className="w-2/12 h-2 bg-gray-700 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-white"
+                initial={{ width: '0%' }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.3, ease: 'linear' }}
+                style={{ transitionTimingFunction: 'ease-in-out' }}
+              ></motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Main content */}
+      {!loading && (
+        <>
+          <Navbar />
+          <Hero />
+          <About />
+          <Projects />
+          <Experience />
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

@@ -1,0 +1,171 @@
+  @media  (max-width: 1024px) {
+    .project-top {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .project-heading {
+      font-size: 3rem;
+      margin-top: 10vw;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-self: center;
+    }
+    .project-heading h1{
+      font-size: 15vw;
+      line-height:14vw;
+      text-align: center;
+    }
+    .project-heading :nth-child(2){
+      font-size: 13vw;
+    }
+  
+    .project-sidetext {
+      width: 90%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2vw;
+    }
+    .project-sidetext p{
+      font-size: 3vw;
+      margin-bottom: 2vw;
+    }
+    .project-sidetext button{
+      /* align-items: center; */
+        scale:1.5;
+    }
+  
+    .projects {
+      width: 90%;
+    }
+  
+    .projectbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .projectbar img {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #Projects{
+        margin-top: 10vh;
+    }
+    .project-head{
+        line-height: 15vw;
+        
+    }
+    .project-head:nth-child(2){
+        font-size: 15vw;
+    }
+    .project-head:nth-child(1){
+        font-size: 17vw;
+    }
+    .project-heading{
+        margin-bottom: 5vw;
+    }
+
+    .project-sidetext {
+      width: 90%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-sidetext p{
+      font-size: 5.5vw;
+      line-height: 1.6rem;
+    }
+    .project-sidetext button{
+      /* align-items: center; */
+        width: 52%;
+    }
+  
+    .projects {
+      width: 100%;
+    }
+  
+    .projectbar img {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .projectbar .heading {
+      font-size: 1.25rem;
+    }
+  
+    .projectbar .description {
+      font-size: 0.875rem;
+    }
+  
+    .project-top {
+      width: 90%;
+    }
+  }
+  
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+    #Projects{
+        margin-top: 10vw;
+    }
+    .project-head{
+        line-height: 14vw;
+    }
+    .project-head:nth-child(2){
+        font-size: 15vw;
+    }
+    .project-head:nth-child(1){
+        font-size: 17vw;
+    }
+    .project-heading{
+        margin-bottom: 3vw;
+    }
+
+    .project-sidetext {
+      width: 90%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-sidetext p{
+        font-size: 4vw;
+        line-height: 2.5rem;
+        /* font-weight: 100; */
+    }
+    .project-sidetext button{
+        scale:1.5;
+        margin-top: 5vw;
+    }
+  
+    .projects {
+      width: 100%;
+    }
+  
+    .projectbar img {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .projectbar .heading {
+      font-size: 2rem;
+    }
+  
+    .projectbar .description {
+      font-size: 0.875rem;
+    }
+  
+    .project-top {
+      width: 90%;
+    }
+  }
+  

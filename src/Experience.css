@@ -1,0 +1,239 @@
+/* Base Styles */
+.experience-container {
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.experience-wrapper {
+  min-height: 100vh;
+  background-color: #0A0A0C;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+.main-exp {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.exptop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.experience-heading {
+  font-size: 5rem;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.heading-bold {
+  font-family: 'Founders Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+/* Desktop Grid Layout */
+.desktop-exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto 5rem;
+}
+
+/* Mobile/Tablet Horizontal Scroll */
+.mobile-exp-scroll {
+  display: none;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.expdivsss {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scrollbar-width: none;
+  box-sizing: border-box;
+}
+
+.expdivsss::-webkit-scrollbar {
+  display: none;
+}
+
+.expdiv-item {
+  min-width: 280px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  transition: background-color 0.3s;
+}
+
+.scroll-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.scroll-arrow.left {
+  left: 0;
+}
+
+.scroll-arrow.right {
+  right: 0;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1279px) {
+  .desktop-exp-grid {
+    display: none;
+  }
+  
+  .mobile-exp-scroll {
+    display: block;
+    margin: 0 auto 3rem;
+  }
+  
+  .exptop {
+    margin-bottom: 2rem;
+  }
+}
+
+/* iPad Pro (1024px) Specific */
+@media (max-width: 1024px) {
+  .expdiv-item {
+    min-width: 300px;
+  }
+  
+  .expdivsss {
+    padding: 1rem 3rem;
+  }
+  
+  .experience-heading {
+    font-size: 4rem;
+  }
+}
+
+/* Smaller Tablets */
+@media (max-width: 768px) {
+  .experience-heading {
+    font-size: 3rem;
+    line-height: 1.1;
+    padding: 0 0.5rem;
+  }
+  
+  .expdiv-item {
+    min-width: 260px;
+  }
+  
+  .expdivsss {
+    padding: 1rem 2rem;
+    margin-bottom: -30vw;
+  }
+  
+  .exptop {
+    margin-top: -35vw;
+    margin-bottom: 1.5rem;
+  }
+
+  .exptop h1{
+    margin-top: 0;
+    font-size: 12vw;
+  }
+  
+  .scroll-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .experience-wrapper {
+    padding: 1rem 0;
+  }
+  
+  .experience-heading {
+    font-size: 2rem;
+    line-height: 1;
+  }
+  
+  .expdiv-item {
+    min-width: 220px;
+  }
+  
+  .expdivsss {
+    padding: 0.5rem 1.5rem;
+    gap: 1rem;
+    margin-bottom: -60vw;
+  }
+  
+  .exptop {
+    margin-bottom: 1rem;
+    margin-top: -40vh;
+  }
+  .exptop h1{
+    margin-top: 0;
+    font-size: 13vw;
+  }
+  
+  .scroll-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 360px) {
+  .experience-heading {
+    font-size: 1.8rem;
+  }
+  
+  .expdiv-item {
+    min-width: 200px;
+  }
+} 
