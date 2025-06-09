@@ -324,35 +324,40 @@ function App() {
 
       {/* Loading Screen */}
       <AnimatePresence>
-        {loading && (
-          <motion.div
-            className="fixed top-0 left-0 w-full h-full bg-[#0A0A0C] flex flex-col items-center justify-center z-50"
-            initial={{ y: 0 }}
-            animate={{ y: 0 }}
-            exit={{ y: '-100%' }}
-            transition={{ duration: 1, ease: 'easeInOut' }}
-          >
-            <motion.img
-              src={icon} // Replace with the path to your loading image
-              alt="Loading"
-              className="w-32 h-32 mb-6"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
-            />
-            <div className="w-2/12 h-2 bg-gray-700 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-white"
-                initial={{ width: '0%' }}
-                animate={{ width: `${progress}%` }}
-                transition={{ duration: 0.3, ease: 'linear' }}
-                style={{ transitionTimingFunction: 'ease-in-out' }}
-              ></motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+  {loading && (
+    <motion.div
+      className="fixed top-0 left-0 w-full h-full bg-[#0A0A0C] flex flex-col items-center justify-center z-50"
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1, ease: 'easeInOut' }}
+    >
+      <motion.img
+        src={icon}
+        alt="Loading"
+        className="w-32 h-32 mb-6"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 15 }}
+        transition={{
+          duration: 2, // ⬅️ Increased duration for slower fade/scale
+          ease: 'easeInOut',
+        }}
+      />
+      <div className="w-2/12 h-2 bg-gray-700 rounded-full overflow-hidden">
+        <motion.div
+          className="h-full bg-white"
+          initial={{ width: '0%' }}
+          animate={{ width: `${progress}%` }}
+          transition={{ duration: 0.3, ease: 'linear' }}
+          style={{ transitionTimingFunction: 'ease-in-out' }}
+        />
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
 
       {/* Main content */}
       {!loading && (
